@@ -1,6 +1,8 @@
 # Laboratorio-4_Fatiga
 ## Descripción:
 
+En esta práctica de laboratorio se abordó el análisis de señales electromiográficas (EMG) como herramienta para detectar la fatiga muscular, mediante la aplicación de técnicas de procesamiento digital de señales. Se emplearon electrodos de superficie conectados a un sistema de adquisición de datos, registrando la señal EMG durante una contracción sostenida del músculo del antebrazo. Posteriormente, la señal fue filtrada utilizando filtros pasa altas y pasa bajas con el fin de reducir el ruido de baja frecuencia y eliminar interferencias de alta frecuencia. La señal procesada fue segmentada en ventanas utilizando una función de Hamming, y en cada una se aplicó la transformada rápida de Fourier (FFT) para obtener el espectro de frecuencias. Como parte del análisis, se evaluó la variación de la frecuencia mediana en el tiempo, considerando su disminución como un indicador fisiológico de fatiga. Finalmente, se aplicó una prueba de hipótesis para determinar si los cambios observados eran estadísticamente significativos, integrando así conocimientos tanto de señal como de análisis estadístico para interpretar fenómenos fisiológicos.
+
 ### Adquisición de la señal
 En este apartado de la guía, para realizar la adquisición de la señal EMG se utilizó una DAQ para capturar la señal del musculo, un módulo ECG para tomar la señal y electrodos. De esta manera se colocaron los electrodos para tomar la señal EMG del musculo del antebrazo.
 
@@ -195,6 +197,13 @@ De igual manera podemos observar que todas las graficas son bastante similares e
 
 Logramos deducir que en la mayoría de ventanas la energía cae despues de los 100Hz, y por otra parte el pico que se indica en la parte superior de las gráficas indica el momento en el que ocurrió una activación importante, es decir el momento de la activación muscular. 
 
+Frecuencias de pico: En las primeras ventanas (1-10), los valores de pico están en un rango más bajo (entre 5500 y 7000). Conforme avanza la numeración de las ventanas, los picos van aumentando progresivamente. En las últimas ventanas analizadas (61-70), los valores de los picos están por encima de 53000.
+
+Atenuación y dispersión: Al inicio, la señal muestra una concentración más definida de energía en frecuencias más bajas. Sin embargo, conforme se acerca la fatiga muscular (en ventanas más avanzadas), la energía se dispersa más, y el espectro parece perder intensidad en las frecuencias más altas.
+
+Fenómeno de Fatiga Muscular: Este cambio en el espectro es característico de la fatiga muscular. A medida que la fatiga se instala, hay un desplazamiento de la frecuencia pico hacia valores más bajos, y la señal pierde energía en las altas frecuencias. Esto se debe a que, con la fatiga, las unidades motoras de contracción rápida dejan de activarse, lo que provoca una mayor presencia de componentes de baja frecuencia en la señal EMG.
+
+
 ### Prueba de hipotesis
 
 El objetivo principal de realizar este test es determinar, de forma estadística, si existe una diferencia significativa entre dos condiciones de la señal EMG: en este caso, entre la primera ventana (estado inicial) y la última ventana (estado de fatiga). En otras palabras, se busca confirmar, con un nivel de confianza definido (en este caso, α = 0.05), si la disminución en la amplitud de la señal que se espera teóricamente cuando el músculo se fatiga es realmente significativa y no se debe al azar.
@@ -222,6 +231,25 @@ Para finalizar se grafica la informacion para su visualización
 *Gráfica  señal*
 
 Con esto, podemos concluir que, al ser el valor de t mayor que el valor crítico positivo, se considera que se encuentra dentro de la región de rechazo. En términos prácticos, se rechaza la hipótesis nula. Relacionando este resultado con la afirmación de que la señal tenía mayor intensidad al inicio que al final, se concluye que existe evidencia estadísticamente significativa para respaldar que la intensidad de la señal en la primera ventana es mayor que en la última. Esto indica que la disminución en la amplitud de la señal (asociada con la fatiga muscular) es real y no atribuible al azar.
+
+El análisis espectral confirma la presencia de fatiga muscular, evidenciada por la reducción de la energía en altas frecuencias y el desplazamiento de la frecuencia de pico hacia valores menores conforme avanza el tiempo.
+
+## Requisitos:
+Python 3.9
+Numpy
+Pandas
+Matplotlib.pyplot
+Scipy.signal import butter, filtfilt, find_peaks, hilbert, windows
+Tkinter
+
+## Contactanos:
+est.mariajose.perez@unimilitar.edu.co
+est.melany.gonzalez@unimilitar.edu.co
+est.david.smoreno@unimilitar.edu.co
+
+
+
+
 
 
 
