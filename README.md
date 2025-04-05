@@ -65,7 +65,8 @@ Al implementar este codigo a la señal EMG tomada, se obtiene lo siguiente:
 Obtenemos que se toman 60000 muestras en 60 s es decir la frecuencia de muestreo multiplicado por el tiempo de la señal, observamos las graficas por medio de muestras.
 Analizando la grafica de filtro pasa altos obtenemos que se elimina la baja frecuencia de la señal observando cambios mas bruscos y rapidos en la forma de onda. 
 
-La grfica de pasa bajos elimina variaciones rapidas, solo se conservan las frecuencias bajas y la estructura es muy parecida a la señal original pero sin cambios rapidos, elimina las frecuencias altas sinperder la infromación útil. 
+La grfica de pasa bajos elimina variaciones rapidas, solo se conservan las frecuencias bajas y la estructura es muy parecida a la señal original pero sin cambios rapidos, elimina las frecuencias altas sinperder la infromación útil. El hecho de que las señales filtradas aún muestren apariencia de ruido significa que: El ruido tiene componentes en el rango de paso del filtro, por lo que no puede ser eliminado completamente. El filtrado puede amplificar ciertas características de la señal, como las oscilaciones rápidas, dándole un aspecto ruidoso.
+
 
 ### Aventanamiento
 
