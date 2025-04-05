@@ -157,9 +157,32 @@ Por otro lado, se analiza que el tipo de ventana usada fue Hamming y se realiza 
 
 Se observa mediante las primeras 10 graficas de análisis espectral de las primeras ventas que la mayor parte de la energía se concentra en las frecuencias bajas, esto debido a que las señales EMG se caracterizan por mantenerar un rango de 20 a 450Hz, indicando que la frecuencias altas son menos significativas.
 
+
 De igual manera podemos observar que todas las graficas son bastante similares entre si. concluyendo que la señal EMG es consistente en el tiempo. Por otro lado, como se configuro en el codigo estan normalizadas para que su amplitud este entre 0 y 1, esto para observar la comparación de todas las gráficas. 
 
 Logramos deducir que en la mayoría de ventanas la energía cae despues de los 100Hz, y por otra parte el pico que se indica en la parte superior de las gráficas indica el momento en el que ocurrió una activación importante, es decir el momento de la activación muscular. 
+
+### Prueba de hipotesis
+
+El objetivo principal de realizar este test es determinar de forma estadística si existe una diferencia significativa entre dos condiciones de la señal EMG, en este caso, entre la primera ventana (estado inicial) y la última ventana (estado de fatiga). En otras palabras, se busca confirmar, con un nivel de confianza definido (en este caso, α=0.05), si la disminución en la amplitud de la señal que se espera teóricamente cuando el músculo se fatiga es realmente significativa y no se debe al azar.
+
+Este análisis permite respaldar la hipotesis alternativa y refutar la hipótesis nula de que, a medida que se produce fatiga, la mediana (o medida central) de la amplitud de la señal disminuye, proporcionando una base objetiva para interpretar los cambios en la señal y, en consecuencia, comprender mejor la respuesta muscular frente a la fatiga.
+
+Para comenzar con la prueba de hipotesis se comenzo buscando funciones que nos ayuden con la prueba. 
+
+![image](https://github.com/user-attachments/assets/2f0b1ba5-1945-483f-b49d-bd20af925191)
+*Librerias*
+
+Se estable el valor de alpha como el nivel de significancia, se verifica la presencia de al menos dos ventanas. Se extrae la informacion de ambas y se realiza las pruebas estadisticas utilizando el test t pareado  para comparar las dos ventanas, con el fin de obtener el estadístico de prueba t_stat y el p_value asociado, que indica la probabilidad de obtener una diferencia al menos tan extrema como la observada si la hipótesis nula fuese cierta. Se procede buscando los grados de libertad asuminedo que la cantidad de datos es similar y se encuentra t critico para prueba bilateral. Y como ultimo paso se llega a una conclucion dependiendo del valor que posee t en refencia a la grafica y los limites establecidos por t critico.
+
+![image](https://github.com/user-attachments/assets/3a25a12c-fe04-4989-a1b1-3ccc30e2d126)
+
+Para finalizar se grafica la informacion para su visualización
+
+![image](https://github.com/user-attachments/assets/2c8e5b17-2bd3-48ef-bc8c-33242f981397)
+
+Con esto podemos concluir que al ser el valor de t mayor al valor crítico positivo, se considera que se está mas allá en el límite de la región de rechazo. En términos prácticos, se rechaza la hipótesis nula. Relacionándolo con la afirmación de que la señal tenía mayor intensidad al principio que al final, se concluye que existe evidencia estadísticamente significativa para respaldar que la intensidad de la señal en la primera ventana es mayor que en la última. Esto indica que la disminución en la amplitud de la señal (asociada con la fatiga) es real y no atribuible al azar.
+
 
 
 
