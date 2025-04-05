@@ -164,16 +164,18 @@ Logramos deducir que en la mayoría de ventanas la energía cae despues de los 1
 
 ### Prueba de hipotesis
 
-El objetivo principal de realizar este test es determinar de forma estadística si existe una diferencia significativa entre dos condiciones de la señal EMG, en este caso, entre la primera ventana (estado inicial) y la última ventana (estado de fatiga). En otras palabras, se busca confirmar, con un nivel de confianza definido (en este caso, α=0.05), si la disminución en la amplitud de la señal que se espera teóricamente cuando el músculo se fatiga es realmente significativa y no se debe al azar.
+El objetivo principal de realizar este test es determinar, de forma estadística, si existe una diferencia significativa entre dos condiciones de la señal EMG: en este caso, entre la primera ventana (estado inicial) y la última ventana (estado de fatiga). En otras palabras, se busca confirmar, con un nivel de confianza definido (en este caso, α = 0.05), si la disminución en la amplitud de la señal que se espera teóricamente cuando el músculo se fatiga es realmente significativa y no se debe al azar.
 
-Este análisis permite respaldar la hipotesis alternativa y refutar la hipótesis nula de que, a medida que se produce fatiga, la mediana (o medida central) de la amplitud de la señal disminuye, proporcionando una base objetiva para interpretar los cambios en la señal y, en consecuencia, comprender mejor la respuesta muscular frente a la fatiga.
+Este análisis permite respaldar la hipótesis alternativa y refutar la hipótesis nula, que plantea que, a medida que se produce la fatiga, la mediana (o medida central) de la amplitud de la señal permanece igual. De este modo, se proporciona una base objetiva para interpretar los cambios en la señal y, en consecuencia, comprender mejor la respuesta muscular frente a la fatiga.
 
-Para comenzar con la prueba de hipotesis se comenzo buscando funciones que nos ayuden con la prueba. 
+Para comenzar con la prueba de hipótesis, se inició buscando funciones que ayuden a realizar este análisis.
 
 ![image](https://github.com/user-attachments/assets/2f0b1ba5-1945-483f-b49d-bd20af925191)
 *Librerias*
 
-Se estable el valor de alpha como el nivel de significancia, se verifica la presencia de al menos dos ventanas. Se extrae la informacion de ambas y se realiza las pruebas estadisticas utilizando el test t pareado  para comparar las dos ventanas, con el fin de obtener el estadístico de prueba t_stat y el p_value asociado, que indica la probabilidad de obtener una diferencia al menos tan extrema como la observada si la hipótesis nula fuese cierta. Se procede buscando los grados de libertad asuminedo que la cantidad de datos es similar y se encuentra t critico para prueba bilateral. Y como ultimo paso se llega a una conclucion dependiendo del valor que posee t en refencia a la grafica y los limites establecidos por t critico.
+Se establece el valor de alfa (α) como el nivel de significancia y se verifica la presencia de al menos dos ventanas. Se extrae la información de ambas ventanas y se realiza una prueba estadística utilizando el test t pareado para compararlas. El objetivo es obtener el estadístico de prueba (t_stat) y el p_value asociado, que indica la probabilidad de observar una diferencia al menos tan extrema como la encontrada, en caso de que la hipótesis nula sea cierta.
+
+A continuación, se calculan los grados de libertad, asumiendo que la cantidad de datos en ambas ventanas es similar, y se determina el valor crítico de t (t_crit) para una prueba bilateral. Finalmente, se llega a una conclusión en función del valor obtenido de t en relación con los límites establecidos por t_crit y su representación gráfica.
 
 ![image](https://github.com/user-attachments/assets/3a25a12c-fe04-4989-a1b1-3ccc30e2d126)
 *Código de los pasos realizados*
@@ -186,7 +188,7 @@ Para finalizar se grafica la informacion para su visualización
 ![image](https://github.com/user-attachments/assets/902b68b4-ffdb-4fe2-9ade-57251c9bbfdd)
 *Gráfica  señal*
 
-Con esto podemos concluir que al ser el valor de t mayor al valor crítico positivo, se considera que se está mas allá en el límite de la región de rechazo. En términos prácticos, se rechaza la hipótesis nula. Relacionándolo con la afirmación de que la señal tenía mayor intensidad al principio que al final, se concluye que existe evidencia estadísticamente significativa para respaldar que la intensidad de la señal en la primera ventana es mayor que en la última. Esto indica que la disminución en la amplitud de la señal (asociada con la fatiga) es real y no atribuible al azar.
+Con esto, podemos concluir que, al ser el valor de t mayor que el valor crítico positivo, se considera que se encuentra dentro de la región de rechazo. En términos prácticos, se rechaza la hipótesis nula. Relacionando este resultado con la afirmación de que la señal tenía mayor intensidad al inicio que al final, se concluye que existe evidencia estadísticamente significativa para respaldar que la intensidad de la señal en la primera ventana es mayor que en la última. Esto indica que la disminución en la amplitud de la señal (asociada con la fatiga muscular) es real y no atribuible al azar.
 
 
 
