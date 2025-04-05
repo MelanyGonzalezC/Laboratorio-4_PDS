@@ -176,10 +176,15 @@ Para comenzar con la prueba de hipotesis se comenzo buscando funciones que nos a
 Se estable el valor de alpha como el nivel de significancia, se verifica la presencia de al menos dos ventanas. Se extrae la informacion de ambas y se realiza las pruebas estadisticas utilizando el test t pareado  para comparar las dos ventanas, con el fin de obtener el estadístico de prueba t_stat y el p_value asociado, que indica la probabilidad de obtener una diferencia al menos tan extrema como la observada si la hipótesis nula fuese cierta. Se procede buscando los grados de libertad asuminedo que la cantidad de datos es similar y se encuentra t critico para prueba bilateral. Y como ultimo paso se llega a una conclucion dependiendo del valor que posee t en refencia a la grafica y los limites establecidos por t critico.
 
 ![image](https://github.com/user-attachments/assets/3a25a12c-fe04-4989-a1b1-3ccc30e2d126)
+*Código de los pasos realizados*
 
 Para finalizar se grafica la informacion para su visualización
 
 ![image](https://github.com/user-attachments/assets/2c8e5b17-2bd3-48ef-bc8c-33242f981397)
+*Código para visualización de señal*
+
+![image](https://github.com/user-attachments/assets/902b68b4-ffdb-4fe2-9ade-57251c9bbfdd)
+*Gráfica  señal*
 
 Con esto podemos concluir que al ser el valor de t mayor al valor crítico positivo, se considera que se está mas allá en el límite de la región de rechazo. En términos prácticos, se rechaza la hipótesis nula. Relacionándolo con la afirmación de que la señal tenía mayor intensidad al principio que al final, se concluye que existe evidencia estadísticamente significativa para respaldar que la intensidad de la señal en la primera ventana es mayor que en la última. Esto indica que la disminución en la amplitud de la señal (asociada con la fatiga) es real y no atribuible al azar.
 
