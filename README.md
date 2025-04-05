@@ -2,6 +2,38 @@
 ## Descripción:
 
 ### Adquisición de la señal
+En este apartado de la guía, para realizar la adquisición de la señal EMG se utilizó una DAQ para capturar la señal del musculo, un módulo ECG para tomar la señal y electrodos. De esta manera se colocaron los electrodos para tomar la señal EMG del musculo del antebrazo.
+
+ ![image](https://github.com/user-attachments/assets/3ada8aba-aaca-4aa5-bba5-0b1b91f33c41)
+*Ubicación de los electrodos para toma de la señal*
+
+Esto, con el propósito de observar las contracciones musculares posibles hasta la fatiga, en nuestro caso la persona realizo 70 contracciones en 60 segundos, pero no fue posible llegar a la fatiga debido a que no se utilizo suficiente fuerza para que en este tiempo se agotara el musculo. 
+De esta manera se realizó un código especifico para capturar la señal y convertir los datos en un archivo de Excel para que el análisis sea mas sencillo. 
+
+![image](https://github.com/user-attachments/assets/b91652ff-2f00-47a4-8685-7889c4965830)
+*Codigo para adquisición de la señal*
+
+En el siguiente código estas dos funciones realizan principalmente la adquisición de datos por medio de la frecuencia de muestreo y el tiempo en el que se quiere tomar la señal, en este caso 60 seg. Posteriormente lee los datos y los procesa por medio de la función procesar_datos que crea un vector basado en la frecuencia de muestreo y luego se muestra la grafica por medio de una imagen  y un archivo en Excel con todos los datos adquiridos.
+Para implementar la señal en el código para posteriormente filtrarla, crear las ventanas, el análisis espectral y la prueba de hipótesis se utilizo un código que crea una ventana con diferentes botones, como seleccionar el archivo, mostrar los filtros, las ventas y FFT. 
+
+![image](https://github.com/user-attachments/assets/d4809431-8630-431f-8554-026a10e4e163)
+*Código para crear el marco contenedor*
+
+
+Con el siguiente código se crea un marco contenedor, con los botones de selección por el usuario ya mencionados anteriormente y de igual manera mantiene la interfaz abierta para escoger las diferentes opciones.
+
+![image](https://github.com/user-attachments/assets/d4bc1de0-c7d9-4a99-8194-f5cbe514205b)
+*Código para cargar los datos de excel*
+
+Luego de seleccionar el botón de seleccionar archivo se sube el Excel de datos con los valores obtenidos de la señal EMG, de esta manera busca la ruta del archivo y la columna que se busca analizar del archivo que en este caso es el voltaje y convierte estos datos een un array (datos del mismo tipo)  y los convierte en la siguiente señal:
+
+![image](https://github.com/user-attachments/assets/7837c3e9-f2ba-4620-943a-e9bf2f11cee2)
+*Señal EMG original*
+ 
+La señal EMG mostrada en la imagen representa la actividad eléctrica de un músculo en respuesta a estímulos nerviosos. Se observa una variabilidad en la amplitud, lo que indica que el músculo está siendo activado con diferente intensidad a lo largo del tiempo. 
+También se aprecia que la señal tiene una apariencia irregular y con variaciones en la densidad de los picos. Esto puede deberse a cambios en la fuerza de contracción del músculo o a variaciones en la fatiga. En algunos momentos, la amplitud parece disminuir, lo que podría indicar un posible indicio de fatiga muscular.
+Para una mejor evaluación de la fatiga muscular, es ideal analizar la evolución de las frecuencias a lo largo del tiempo mediante una transformada de Fourier (FFT) que se hará mas adelante.
+
 
 ### Filtrado de la señal
 Para esta parte de la guia, una vez la señal tomada se analiza para poder realizar el filtrado de dicha señal,para lograr observar una señal mas clara, esto por medio de un friltro pasa altos y un filtro pasa bajos. De igual manera se sieñan con un filtro llamado  filtro butterworth que es un tipo de filtro de procesamiento de señales diseñado para tener una respuesta en frecuencia lo más plana posible en la banda de paso.  
